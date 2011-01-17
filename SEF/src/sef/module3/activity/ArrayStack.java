@@ -2,7 +2,7 @@ package sef.module3.activity;
 
 
 /**
- * @author John Doe
+ * @author Bernards Gulbis
  * 
  * This class represents a stack structure (Last-In, First-Out) implemented using
  * an array
@@ -29,6 +29,8 @@ public class ArrayStack{
 		//of the integer parameter variable 'maximum' is less than 0 
 		//If true, then then the variable 'maximum' should be set to 1
 		
+		if (maximum < 0) maximum = 1;
+		
 		//END TODO #1
 		
 		
@@ -36,12 +38,16 @@ public class ArrayStack{
 		//TODO #2: Write code that will initialize the array 'stack' as an 
 		//array of objects with a maximum length specified by the parameter 'maximum'
 		
+		stack = new Object [maximum];
+		
 		//END TODO #2
 	
 		
 		
 		//TODO #3: Write code that will initialize the value of the 
 		//integer variable 'count' to 0
+		
+		count = 0;
 	
 		//END TODO #3
 	}
@@ -53,10 +59,12 @@ public class ArrayStack{
 	 */
 	public Object peek(){
 		
-		Object temp= null;
+		Object temp = null;
 		
 		//TODO #4: Write decision making code to see if the value of 'count' is 0.  
 		//If true, set the value of 'temp' to null
+		
+		if (count == 0) temp = null;
 		
 		//END TODO #4
 		
@@ -64,6 +72,9 @@ public class ArrayStack{
 		//TODO #5: Write code that will assign to temp, the 
 		//last element pushed into this array
 		
+		if (count > 0)
+			temp = stack[count-1];
+				
 		//END TODO #5
 		
 		return temp;
@@ -81,6 +92,8 @@ public class ArrayStack{
 		//space in the array to store one more 'element'.  If there is no more space, 
 		//return false
 		
+		if (count >= stack.length) return false;
+		
 		//END TODO #6
 		
 		
@@ -88,6 +101,9 @@ public class ArrayStack{
 		//TODO #7: Write code that will add the Object parameter 'element' to the next
 		//available index of the array. The integer variable 'count' should be increased
 		//by 1 to indicate this addition to the array
+		
+		stack[count] = element;
+		count++;
 		
 		//END TODO #7
 		
@@ -106,17 +122,23 @@ public class ArrayStack{
 		//TODO #8: Write code that will check if there are any elements contained in 
 		//the 'stack' array.  If there array is empty, return null
 		
+		if (count <= 0) return null;
+		
 		//END TODO #8
 		
 		
 		//TODO #9: Write code that will subtract 1 from the variable 'count' to represent an
 		//element being 'removed' from the array
 		
+		count--;
+		
 		//END TODO 9
 		
 		
 		//TODO #10: Write code that will get the last element added in the array and assign it
 		//to the variable 'temp'
+		
+		temp = stack[count];
 	
 		//END TODO #10
 		
@@ -139,6 +161,9 @@ public class ArrayStack{
 		//of the array. 
 		//Ex: An element found at the top of the stack will be at position 0
 		
+		for (int i = 0; i < count; i++){
+			if (stack[i].equals(element)) return count - 1 - i;			
+		}
 	
 		//END TODO #11:
 		
