@@ -3,7 +3,7 @@ package sef.module4.activity;
 /**
  * This class represents a playing card 
  * 
- * @author John Doe
+ * @author Bernards Gulbis
  *
  */
 
@@ -31,7 +31,7 @@ public class PlayingCard {
 	public static final int DIAMONDS = 2;
 	public static final int CLUBS = 1;
 
-
+	
 
 	/**
 	 * Creates an instance of a PlayingCard given the specified parameters. Valid
@@ -48,6 +48,9 @@ public class PlayingCard {
 	
 	
 	//TODO #1: Write an instance variables that will handle the Integer value of number and suit.   
+
+	private int number;
+	private int suit;	
 	
 	//END TODO #1
 	
@@ -58,10 +61,22 @@ public class PlayingCard {
 		// Assign the number and suit argument to instance variable respectively
 		// If the arguments were not filter, make a code that will assign instance variables to a JOKER value
 		
+		if (number < ACE || number > KING) {
+			number = JOKER;
+			suit = JOKER;
+		}
+		else if (suit < CLUBS || suit > SPADES) {
+			number = JOKER;
+			suit = JOKER;
+		}
+		
+		this.number = number;
+		this.suit = suit;
+		
 		//END TODO #2
 		
 	
-		}
+	}
 			
 	
 	/**
@@ -72,6 +87,9 @@ public class PlayingCard {
 
 		//TODO #3: Make an instance of JOKER playing card
 		// Assign instance variable to a JOKER value
+		
+		this.number = JOKER;
+		this.suit = JOKER;
 		
 		//END TODO #3
 		
@@ -91,9 +109,10 @@ public class PlayingCard {
 		//TODO #4: Return the Integer value of the playing card
 		// Return the value of current value of the number 
 		
+		return this.number;
+		
 		//END TODO #4
 	
-		return 0;
 	}
 
 
@@ -108,9 +127,10 @@ public class PlayingCard {
 		//TODO #5: Return the Integer value of the playing card
 		// Return the value of current value of the suit 
 		
+		return this.suit;
+		
 		//END TODO #5
 
-		return 0;
 	}
 
 
@@ -128,8 +148,67 @@ public class PlayingCard {
 		// It will be easier if a switch-case statement is use in the code. 
 		// Make a code that will return the String value of JOKER if the default value was chosen
 		
+		String playingCardString = "JOKER";
+		
+		switch (this.number) {
+		case ACE:
+			playingCardString = "ACE";
+			break;
+		case TWO:	
+			playingCardString = "TWO";
+			break;			
+		case THREE:
+			playingCardString = "THREE";
+			break;
+		case FOUR:
+			playingCardString = "FOUR";
+			break;
+		case FIVE:
+			playingCardString = "FIVE";
+			break;
+		case SIX:
+			playingCardString = "SIX";
+			break;
+		case SEVEN:
+			playingCardString = "SEVEN";
+			break;
+		case EIGHT:
+			playingCardString = "EIGHT";
+			break;
+		case NINE:
+			playingCardString = "NINE";
+			break;
+		case TEN:
+			playingCardString = "TEN";
+			break;
+		case JACK:
+			playingCardString = "JACK";
+			break;
+		case QUEEN:
+			playingCardString = "QUEEN";
+			break;
+		case KING:
+			playingCardString = "KING";
+			break;
+		}
+		
+		switch (this.suit) {
+		case CLUBS:
+			playingCardString += " of CLUBS";
+			break;
+		case DIAMONDS:	
+			playingCardString += " of DIAMONDS";
+			break;			
+		case HEARTS:
+			playingCardString += " of HEARTS";
+			break;
+		case SPADES:
+			playingCardString += " of SPADES";
+			break;
+		}
+		
 		//END TODO #6
 		
-		return "";
+		return playingCardString;
 	}
 }
