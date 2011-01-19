@@ -1,6 +1,6 @@
 package sef.module6.activity;
 /**
- * @author  John Doe
+ * @author  Bernards Gulbis
  * 
  * This interface represents a point in 3D space.  The coordinates are represented by
  * a set of values x, y an z that represents the coordinates along each plane

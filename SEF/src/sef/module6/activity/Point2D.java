@@ -1,7 +1,7 @@
 package sef.module6.activity;
 
 /**
- * @author John Doe
+ * @author Bernards Gulbis
  * 
  * This interface is a representation of a point in a 2D plane.  The point's
  * location is represented by an {x,y} pair representing the coordinates along the
