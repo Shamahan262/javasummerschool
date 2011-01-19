@@ -3,7 +3,7 @@ package sef.module7.activity;
 /**
  * An interface representing denominations used by various currencies
  * 
- * @author John Doe
+ * @author Bernards Gulbis
  *
  */
 public interface Denomination {

@@ -5,7 +5,7 @@ import java.util.Calendar;
 /**
  * Represents an interface for Currency classes
  * 
- * @author John Doe
+ * @author Bernards Gulbis
  *
  */
 public interface Currency {
