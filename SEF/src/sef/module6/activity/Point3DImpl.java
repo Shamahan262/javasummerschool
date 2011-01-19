@@ -69,7 +69,7 @@ public class Point3DImpl extends Point2DImpl implements Point3D{
 	 * @see sef.module5.activity.Point3D#equals(double, double, double)
 	 */
 	public boolean equals(double x2, double y2, double z2){
-		return (super.equals(x2, y2) && this.z == z2);
+		return (this.getX() == x2 && this.getY() == y2 && this.getZ() == z2);
 	}
 	
 	
