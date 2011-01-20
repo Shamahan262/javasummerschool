@@ -4,7 +4,7 @@ package sef.module8.activity;
  * This class represents the exception that can be thrown if the
  * name given to an Account instance violates naming rules
  * 
- * @author John Doe
+ * @author Bernards Gulbis
  *
  */
 public class AccountException extends Exception{
@@ -13,7 +13,8 @@ public class AccountException extends Exception{
 	public static final String NAME_TOO_SHORT = "Name must be longer than 4 characters";
 	public static final String NAME_TOO_SIMPLE = "Name must contain a combination of letters and numbers"; 
 	
-	
+	private String message;
+	private String name;
 	
 	/**
 	 * Constructs an AcountException
@@ -22,9 +23,8 @@ public class AccountException extends Exception{
 	 * @param name The actual name 
 	 */
 	public AccountException(String message, String name){
-	
-		
-		
+		this.message = message;
+		this.name = name;		
 	}
 	
 	/**
@@ -33,7 +33,7 @@ public class AccountException extends Exception{
 	 * @return
 	 */
 	public String getName(){
-		return "";
+		return this.name;
 	}
 	
 	
