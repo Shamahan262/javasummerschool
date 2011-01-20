@@ -3,7 +3,7 @@ package sef.module9.activity;
 /**
  * Interfae for RadarContacts
  * 
- * @author John Doe
+ * @author Bernards Gulbis
  *
  */
 public interface RadarContact {

@@ -14,13 +14,13 @@ import java.util.Map;
  */
 public class RadarImpl implements Radar{
 
-
+	private Map<String, RadarContact> contacts;
 	
 	/**
 	 *  Constructs a new Radar 
 	 */
-	public RadarImpl(){
-		
+	public RadarImpl() {
+		contacts = new HashMap<String, RadarContact>();
 	}
 	
 	
@@ -28,45 +28,52 @@ public class RadarImpl implements Radar{
 	 * @see sef.module8.activity.Radar#addContact(sef.module8.activity.RadarContact)
 	 */
 	public RadarContact addContact(RadarContact contact) {
-		return null;
+		if (contact == null) {
+			return null;
+		}
+		contacts.put(contact.getContactID(), contact);
+		return (RadarContact) contacts.get(contact.getContactID());
 	}
 
 	/* (non-Javadoc)
 	 * @see sef.module8.activity.Radar#getContact(java.lang.String)
 	 */
 	public RadarContact getContact(String id) {
-		return null;
+		return (RadarContact) contacts.get(id);
 	}
 
 	/* (non-Javadoc)
 	 * @see sef.module8.activity.Radar#getContactCount()
 	 */
 	public int getContactCount() {
-		
-		return 0;
+		return contacts.size();
 	}
 
 	/* (non-Javadoc)
 	 * @see sef.module8.activity.Radar#removeContact(java.lang.String)
 	 */
 	public RadarContact removeContact(String id) {
-		
-		return null;
+		return (RadarContact) contacts.remove(id);
 	}
 
 	/* (non-Javadoc)
 	 * @see sef.module8.activity.Radar#returnContacts()
 	 */
 	public List<RadarContact> returnContacts() {
-		return null;
+		
+		List<RadarContact> temp = new ArrayList<RadarContact>() ;
+		temp.addAll(contacts.values());
+		return temp;
 	}
 
 	/* (non-Javadoc)
 	 * @see sef.module8.activity.Radar#returnContacts(java.util.Comparator)
 	 */
 	public List<RadarContact> returnContacts(Comparator<RadarContact> comparator) {
-
-		return null;
+		List<RadarContact> temp = new ArrayList<RadarContact>();
+		temp.addAll(contacts.values());
+		Collections.sort(temp, comparator);
+		return temp;
 	}
 
 	
