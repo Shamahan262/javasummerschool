@@ -26,10 +26,12 @@ public class QueueWorker implements Runnable {
 						e.printStackTrace();
 					}
 				}
+				// method should be synchronized
+				this.task = queue.getNextTask();
+				this.length = task.length();
 			}
 
-			this.task = queue.getNextTask();
-			this.length = task.length();
+			
 
 			doTask();
 			
